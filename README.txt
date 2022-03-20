@@ -42,6 +42,6 @@ Likewise you may use "uninstall.sh" to remove the "~/.vim/plugin/syntaxis/cub_sy
 
 -----------COLORS-----------
 
-The colors may seem ugly. But this plugin does not provide custom colors. The colors that you see are dependent on  your active colorscheme. When deciding the highlighting groups for the syntax I assumed that ":colorscheme" was set to default.
+The colors may seem ugly. But this plugin does not provide custom colors. The colors that you see are dependent on your active colorscheme. When deciding the highlighting groups for the syntax I assumed that ":colorscheme" was set to default.
 
 ----------------------------
