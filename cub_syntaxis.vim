@@ -1,11 +1,11 @@
 fun! Syn_cub()
-	syntax match pathToMap /^[(NO),(EA),(WE),(SO)]. .*$/ contains=faceOrientation
-	syntax keyword faceOrientation NO contained containedin=pathToMap
-	syntax keyword faceOrientation EA contained containedin=pathToMap
-	syntax keyword faceOrientation WE contained containedin=pathToMap
-	syntax keyword faceOrientation SO contained containedin=pathToMap
+	syntax match pathToMap /^[ ,	]*[(NO),(EA),(WE),(SO)].[ ,	]*.*$/ contains=faceOrientation
+	syntax match faceOrientation /NO/ contained containedin=pathToMap
+	syntax match faceOrientation /EA/ contained containedin=pathToMap
+	syntax match faceOrientation /WE/ contained containedin=pathToMap
+	syntax match faceOrientation /SO/ contained containedin=pathToMap
 
-	syntax match envColor /^[F,C] .*$/ contains=envColorColor
+	syntax match envColor /^[ ,	]*[F,C][ ,	]*.*$/ contains=envColorColor
 	syntax keyword envColorColor F contained containedin=envColor
 	syntax keyword envColorColor C contained containedin=envColor
 

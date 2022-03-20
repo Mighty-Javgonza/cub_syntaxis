@@ -1,4 +1,4 @@
-The 42 cub3D project includes a propietary file type. The "*.cub".
+The 42 cub3D project includes a new file type. The "*.cub".
 
 This plugin contains the necessary functionalities to tell vim how to process the syntax of "*.cub" files.
 
