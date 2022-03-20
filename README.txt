@@ -22,7 +22,7 @@ The 42 cub3D project includes a new file type. The "*.cub".
 
 This plugin contains a function to tell vim how to process the syntax of "*.cub" files.
 
-Then  it links the custom syntax to highlight groups that vim can recognise.
+It then links the custom syntax to highlight groups that vim can recognise.
 
 ----------------------------
 
