@@ -28,6 +28,18 @@ fun! Syn_cub()
 	highlight default link character StatusLine
 	highlight default link invalidSpace ErrorMsg
 
+	highlight Normal ctermbg=0
+
+	highlight emptySpace ctermfg=236
+	highlight wall ctermfg=15 cterm=bold
+	highlight character ctermfg=39 cterm=bold
+
+	highlight faceOrientation ctermfg=39 cterm=bold
+	highlight pathToFile ctermfg=159
+	highlight envColorColor ctermfg=39 cterm=bold
+	highlight envColor ctermfg=159
+	highlight invalidSpace ctermbg=160 ctermfg=160
+
 endfunction
 
 if (expand('%:e') == 'cub')
