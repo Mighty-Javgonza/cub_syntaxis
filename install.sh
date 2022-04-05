@@ -1,14 +1,10 @@
+FOLDER=$(dirname $0)
 
-REPO_DIR=$(dirname $0)
-
-mkdir -p ~/.vim/plugin/syntaxis
-cp "$REPO_DIR/cub_syntaxis.vim" ~/.vim/plugin/syntaxis/cub_syntaxis.vim
-
-DIFFERENCE=$(diff "$REPO_DIR/cub_syntaxis.vim" ~/.vim/plugin/syntaxis/cub_syntaxis.vim)
-
-if [ $? == 0 ] && [ "$DIFFERENCE" == "" ]
+read -p "Install custom colors? (If you choose no then colors will depend on your theme/colorscheme)[y/n]:" -n 1 -r
+echo
+if [ $REPLY == 'Y' ] || [ $REPLY == 'y' ]
 then
-	echo Install successful
+$FOLDER/install_a_version.sh cub_syntaxis_custom_colors.vim
 else
-	echo Install failed
+$FOLDER/install_a_version.sh cub_syntaxis.vim
 fi
