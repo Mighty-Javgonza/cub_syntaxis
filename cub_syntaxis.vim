@@ -1,21 +1,20 @@
 fun! Syn_cub()
-	syntax match everything /.*/
-
-	syntax match pathToFile /^[ ,	]*[(NO),(EA),(WE),(SO)].[ ,	]*.*$/ contained containedin=everything contains=faceOrientation
+	syntax match nonFile /\v^([(NO),(EA),(WE),(SO),F,C,S])@!.*/
+	syntax match pathToFile /^[ ,	]*[(NO),(EA),(WE),(SO),(S)].[ ,	]*.*$/ contains=faceOrientation
 	syntax match faceOrientation /NO/ contained containedin=pathToFile
 	syntax match faceOrientation /EA/ contained containedin=pathToFile
 	syntax match faceOrientation /WE/ contained containedin=pathToFile
-	syntax match faceOrientation /SO/ contained containedin=pathToFile
+	syntax match faceOrientation /SO\?/ contained containedin=pathToFile
 
-	syntax match envColor /^[ ,	]*[F,C][ ,	]*.*$/ contained containedin=everything contains=envColorColor
+	syntax match envColor /^[ ,	]*[F,C][ ,	]*.*$/ contains=envColorColor
 	syntax keyword envColorColor F contained containedin=envColor
 	syntax keyword envColorColor C contained containedin=envColor
 
-
-	syntax match wall /1/ contained containedin=everything
-	syntax match emptySpace /0/ contained containedin=everything
-	syntax match character /\zs[N,W,S,E]\ze[^O,A,E,O]/ contained containedin=everything
-	syntax match invalidSpace /\zs \ze[^1, ]/ contained containedin=everything
+	syntax match wall /1/ contained containedin=nonFile
+	syntax match emptySpace /0/ contained containedin=nonFile
+	syntax match character /\zs[N,W,S,E]\ze[^O,A,E,O]/ contained containedin=nonFile
+	syntax match invalidSpace /\zs \ze\([1, ]\)\@!/ contained containedin=nonFile
+	syntax match invalidSpace /0 / contained containedin=nonFile
 
 	highlight default link pathToFile String
 	highlight default link faceOrientation Identifier
